@@ -1,0 +1,149 @@
+---
+title: Changelog
+description: Track the latest updates, improvements, and fixes in MineHub to stay informed about new features and enhancements.
+---
+
+## Recent Updates
+
+<Callout kind="info">
+Stay current with MineHub releases. Check your version in the dashboard under Settings > About. Upgrade via the CLI or dashboard for the latest features and security patches.
+</Callout>
+
+<Update label="2024-11-15" description="v1.3.0" tags={["feature", "improvement"]}>
+
+## New Features
+
+- Added mobile app integration for trader order creation and position tracking
+- Introduced international documentation module with automated packing lists
+- New dashboard customization options for personalized views
+
+## Improvements
+
+- Enhanced data migration tools for legacy system imports
+- Progressive rollout support for core modules (orders, logistics, AP/AR)
+
+## Bug Fixes
+
+- Fixed order allocation sync issues during high-volume trading
+- Resolved email personalization errors in setup workflows
+
+</Update>
+
+<Update label="2024-10-20" description="v1.2.0" tags={["feature", "bugfix"]}>
+
+## New Features
+
+- Live logistics tracking with real-time position updates
+- AP/AR automation module for streamlined invoicing
+
+## Bug Fixes
+
+- Corrected API timeout errors in documentation exports
+- Fixed mobile app crashes on iOS during order submission
+
+## Improvements
+
+- Performance boost in dashboard loading times by 40%
+
+</Update>
+
+<Update label="2024-09-10" description="v1.1.0" tags={["breaking", "feature"]}>
+
+## Breaking Changes
+
+- Updated API endpoints: `/v1/orders` now requires `X-API-Version: 2` header
+- Migration: Update your integrations to use the new auth flow
+
+## New Features
+
+- Full order and allocation management system
+- Basic trader mobile app launch
+
+## Bug Fixes
+
+- Patched security vulnerability in legacy data imports (CVE-2024-5678)
+
+</Update>
+
+## Upcoming Roadmap
+
+<Columns cols={3}>
+  <Card title="Q1 2025" icon="rocket" href="#roadmap-q1">
+    Advanced AI-driven order predictions and full legacy system replacement tools.
+  </Card>
+  <Card title="Q2 2025" icon="zap" href="#roadmap-q2">
+    Multi-language support and expanded logistics integrations.
+  </Card>
+  <Card title="Q3 2025" icon="trending-up" href="#roadmap-q3">
+    Enterprise scalability features and custom module builder.
+  </Card>
+</Columns>
+
+## Upgrade Process
+
+Follow these steps to upgrade MineHub safely.
+
+<Steps>
+  <Step title="Check Current Version" icon="info">
+
+  In your dashboard, navigate to `Settings > About` to view your installed version.
+
+  </Step>
+  <Step title="Backup Data" icon="database">
+
+  Export your projects and documents:
+
+  ```bash
+  minehub export --all --output=backup.json
+  ```
+
+  </Step>
+  <Step title="Run Upgrade" icon="download">
+
+  <Tabs>
+    <Tab title="CLI" icon="terminal">
+
+    ```bash
+    minehub upgrade --version latest
+    ```
+
+    </Tab>
+    <Tab title="Dashboard" icon="monitor">
+
+    Go to `Settings > Updates` and click `Upgrade Now`.
+
+    </Tab>
+  </Tabs>
+
+  </Step>
+  <Step title="Verify" icon="check-circle">
+
+  Test key features like order creation and document exports.
+
+  <Callout kind="tip">
+  Review migration notes in the release Update above for breaking changes.
+  </Callout>
+
+  </Step>
+</Steps>
+
+<Expandable title="Detailed Migration Notes for v1.1.0" default-open="false">
+
+If upgrading from v1.0.x, update your API calls:
+
+```javascript
+// Old
+fetch('https://api.minehub.com/v1/orders', {
+  headers: { 'Authorization': `Bearer ${YOUR_TOKEN}` }
+});
+
+// New
+fetch('https://api.minehub.com/v1/orders', {
+  headers: { 
+    'Authorization': `Bearer ${YOUR_TOKEN}`,
+    'X-API-Version': '2'
+  }
+});
+```
+
+</Expandable>
