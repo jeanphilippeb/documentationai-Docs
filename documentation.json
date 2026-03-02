@@ -35,6 +35,10 @@
             "icon": "layers",
             "pages": [
               {
+                "title": "Margin",
+                "path": "margin"
+              },
+              {
                 "title": "Features",
                 "path": "features",
                 "icon": "star"
