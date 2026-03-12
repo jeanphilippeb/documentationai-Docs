@@ -1,133 +1,219 @@
 ---
-title: Core Features of MineHub
-description: Explore the main capabilities of MineHub, from collaborative editing to version control, to streamline your documentation workflows.
+title: Core Features of Jules
+description: Explore the main capabilities of Jules — from trade lifecycle management to margin analytics — that streamline commodity trading operations end to end.
 ---
 
 ## Overview
 
-MineHub provides essential tools to manage your project documentation efficiently. You collaborate in real-time, track changes with version history, organize content effectively, embed rich media, and export in multiple formats. These features help teams maintain up-to-date docs without complexity.
+Jules provides a comprehensive set of tools to manage the entire commodity trading lifecycle. You create and track operations, manage contracts and pricing, coordinate logistics, handle invoicing, and monitor margins — all from a single platform. These features help trading teams replace fragmented spreadsheets and email chains with structured, connected workflows.
 
 <Callout kind="info">
-MineHub focuses on simplicity. Start with basic pages and scale to advanced workflows as your projects grow.
+Jules is designed for progressive adoption. Start with operations and contracts, then activate logistics, invoicing, and margin modules as your workflows require.
 </Callout>
 
 ## Key Features Overview
 
 <Columns cols={3}>
-  <Card title="Collaborative Editing" icon="users" href="#collaborative-editing">
-    Edit documents together with real-time updates and comments.
+  <Card title="Trade Lifecycle" icon="repeat" href="#trade-lifecycle-management">
+    Manage operations from contract to cash settlement.
   </Card>
-  <Card title="Version History" icon="git-branch" href="#version-history">
-    Track changes and rollback to previous versions easily.
+  <Card title="Contracts & Pricing" icon="file-text" href="#contracts-and-pricing">
+    Define agreements with formula-based pricing and index tracking.
   </Card>
-  <Card title="Search & Organization" icon="search" href="#search-organization">
-    Find content quickly and structure your docs logically.
-  </Card>
-</Columns>
-
-<Columns cols={2}>
-  <Card title="Embedding Media" icon="image" href="#embedding-media">
-    Add images, videos, and links seamlessly.
-  </Card>
-  <Card title="Exporting Docs" icon="download" href="#exporting">
-    Export to PDF, HTML, or Markdown for sharing.
+  <Card title="Logistics & Freight" icon="truck" href="#logistics-and-freight">
+    Coordinate bookings, containers, shipments, and pre-carriage.
   </Card>
 </Columns>
 
-## Collaborative Editing and Real-Time Updates
+<Columns cols={3}>
+  <Card title="Invoicing & Billing" icon="credit-card" href="#invoicing-and-billing">
+    Generate invoices, track payments, and sync with your ERP.
+  </Card>
+  <Card title="Margin Analytics" icon="trending-up" href="#margin-analytics">
+    Calculate profitability at container, operation, and portfolio level.
+  </Card>
+  <Card title="Collaboration" icon="users" href="#collaboration-and-notifications">
+    Assign tasks, track activities, and stay notified on every change.
+  </Card>
+</Columns>
 
-Invite team members to edit pages simultaneously. Changes appear instantly, reducing coordination overhead. Use `@mentions` to notify contributors and resolve comments inline.
+## Trade Lifecycle Management
 
-<Tabs>
-  <Tab title="Web Editor" icon="globe">
-    Access the full-featured editor in your browser.
-  </Tab>
-  <Tab title="Mobile App" icon="smartphone">
-    Edit on the go with the MineHub mobile app.
-  </Tab>
-</Tabs>
-
-<CodeGroup tabs="Markdown,Rich Text">
-  ```markdown
-  # Welcome to MineHub
-  Collaborate with your team using `@username` mentions.
-  ```
-  ```html
-  <h1>Welcome to MineHub</h1>
-  <p>Collaborate with your team using @username mentions.</p>
-  ```
-</CodeGroup>
-
-## Version History and Rollback
-
-Every edit creates a new version automatically. View diffs, compare changes, and restore previous states with one click.
+Every trade in Jules is represented by an **operation** — the central entity that connects commercial terms, logistics, and financials. Operations follow a structured lifecycle with built-in approval workflows.
 
 <Steps>
-  <Step title="View History" icon="clock">
-    Click the history icon on any page.
+  <Step title="Create Operation" icon="plus-circle">
+    Create from a contract or directly. Define counterparty, qualities, quantities, and pricing.
   </Step>
-  <Step title="Compare Versions" icon="git-compare">
-    Select two versions to see side-by-side diffs.
+  <Step title="Submit for Approval" icon="check-circle">
+    Route the operation through your organization's approval chain with role-based permissions.
   </Step>
-  <Step title="Rollback" icon="refresh-cw">
-    Restore a version and add a note for the team.
+  <Step title="Load Containers" icon="package">
+    Add containers with weights, qualities, and loading details — or manage bulk stockpiles for local trades.
+  </Step>
+  <Step title="Book & Ship" icon="anchor">
+    Create freight bookings, assign shipping lines, and track shipments to destination.
+  </Step>
+  <Step title="Invoice & Settle" icon="dollar-sign">
+    Generate invoices from container lines, reconcile payments, and close the trade.
   </Step>
 </Steps>
 
 <Callout kind="tip">
-Always add descriptive commit messages to help your team understand changes.
+Operations support two market modes: **Export** (international containerized shipments) and **Local** (domestic bulk deliveries). The mode determines which logistics flows and margin calculations apply.
 </Callout>
 
-## Search and Organization Tools
+## Contracts and Pricing
 
-Powerful search indexes all content. Organize with folders, tags, and table of contents. Filter by tags or date for quick access.
+Define commercial agreements that prefill operations automatically. Contracts capture counterparty terms, quality streams, price formulas, and delivery schedules — reducing manual data entry and ensuring consistency.
+
+<Tabs>
+  <Tab title="Fixed Pricing" icon="lock">
+    Set a fixed price per metric ton at contract creation. Ideal for spot deals and short-term agreements.
+  </Tab>
+  <Tab title="Index-Based Pricing" icon="bar-chart-2">
+    Link prices to market indices (LME, TSI, Platts) with premium/discount adjustments. Prices update automatically based on quotation periods.
+  </Tab>
+  <Tab title="Formula Pricing" icon="percent">
+    Build custom formulas combining indices, fixed components, and percentage-based adjustments for complex pricing structures.
+  </Tab>
+</Tabs>
 
 | Feature | Description | Use Case |
 |---------|-------------|----------|
-| Full-Text Search | Searches titles, body, and tags | Finding specific topics |
-| Tag Filtering | Apply and filter by custom tags | Categorizing docs |
-| Folders | Nested structure for projects | Organizing large spaces |
+| Quality Streams | Multiple material grades per contract | Mixed-quality shipments |
+| Price Suggestions | AI-assisted pricing from market data | Quick offer creation |
+| Offers & Portal | Share commercial offers via external portal | Counterparty collaboration |
+| Allocation Matching | Link purchase and sale operations | Back-to-back trade tracking |
 
-## Embedding Media and Links
+## Logistics and Freight
 
-Embed images, videos, and iframes directly in pages. Supported formats include PNG, MP4, YouTube, and external links.
-
-<Expandable title="Advanced Embedding Options" default-open="false">
-Use relative paths for internal assets or full URLs for external media. MineHub optimizes images automatically for faster loading.
-</Expandable>
+Coordinate the full logistics chain — from pre-carriage pickup to final port delivery — with integrated booking, container, and shipment management.
 
 ```mermaid
-graph LR
-    A[Markdown Page] --> B{Embed Type?}
-    B -->|Image| C[<Image src="url" alt="Alt text" />]
-    B -->|Video| D[<Video src="url" title="Video" />]
-    B -->|Link| E[[External Link]]
+flowchart LR
+    PC[Pre-Carriage\nPickup & Transport] --> CTN[Containers\nLoading & Weighing]
+    CTN --> BK[Booking\nFreight & Shipping Line]
+    BK --> SHIP[Shipment\nPort-to-Port Transit]
+    SHIP --> DEL[Delivery\nArrival & Unloading]
+
+    style PC fill:#6270B8,color:white
+    style CTN fill:#4E3BEB,color:white
+    style BK fill:#4E3BEB,color:white
+    style SHIP fill:#6270B8,color:white
+    style DEL fill:#03CE85,color:white
 ```
 
-## Exporting Documentation
+<Expandable title="Local Market Logistics" default-open="false">
+For domestic trades, Jules simplifies logistics with direct delivery tracking and stockpile management — no containerization or maritime booking required. Yard reception workflows handle weighing, quality checks, and inventory updates.
+</Expandable>
 
-Export entire spaces or single pages to various formats. Share static versions offline or integrate with other tools.
+## Invoicing and Billing
 
-<CodeGroup tabs="PDF,Markdown,HTML">
-  ```bash
-  # Export via CLI
-  minehub export --space=my-docs --format=pdf output.pdf
+Generate invoices directly from operation data. Container weights, pricing, and terms flow automatically into invoice lines — eliminating manual calculations and reducing errors.
+
+<Columns cols={2}>
+  <Card title="Invoice Types" icon="layers">
+    Proforma, commercial, credit notes, debit notes — each with configurable templates and approval flows.
+  </Card>
+  <Card title="ERP Integration" icon="refresh-cw">
+    Sync invoices, payments, and accounting data with your ERP system via webhooks and API.
+  </Card>
+</Columns>
+
+<CodeGroup tabs="Invoice Flow,Payment Tracking">
+  ```mermaid
+  flowchart TD
+      OP[Operation] --> CTN[Containers]
+      CTN --> IL[Invoice Lines]
+      IL --> INV[Invoice]
+      INV --> PAY[Payment]
+      PAY --> CLOSED[Closed]
+
+      style OP fill:#4E3BEB,color:white
+      style INV fill:#FF7512,color:white
+      style CLOSED fill:#03CE85,color:white
   ```
-  ```bash
-  # Export Markdown bundle
-  minehub export --space=my-docs --format=md ./exports/
-  ```
-  ```bash
-  # HTML for web hosting
-  minehub export --space=my-docs --format=html ./static-site/
+  ```mermaid
+  flowchart LR
+      INV[Invoice Issued] --> PARTIAL[Partially Paid]
+      PARTIAL --> FULL[Fully Paid]
+      FULL --> RECONCILED[Reconciled]
+
+      style INV fill:#FF7512,color:white
+      style FULL fill:#03CE85,color:white
+      style RECONCILED fill:#03CE85,color:white
   ```
 </CodeGroup>
 
-<Columns cols={2}>
-  <Card title="Get Started" icon="rocket" href="/quickstart">
-    Follow the quickstart guide.
+## Margin Analytics
+
+Track profitability in real time across every level of your trading portfolio. Jules calculates margins automatically from operation data, freight costs, hedging positions, and unexpected costs.
+
+<Tabs>
+  <Tab title="Container Margin" icon="box">
+    Per-container P&L combining purchase price, sale price, freight, insurance, and hedging gains/losses.
+  </Tab>
+  <Tab title="Operation Margin" icon="activity">
+    Aggregated margin across all containers in an operation, including unexpected costs and budget variances.
+  </Tab>
+  <Tab title="Dashboard Margin" icon="pie-chart">
+    Portfolio-level analytics with filters by period, counterparty, commodity, and market mode.
+  </Tab>
+</Tabs>
+
+| Metric | Calculation | Visibility |
+|--------|-------------|------------|
+| Gross Margin | Sale revenue − Purchase cost | Per container |
+| Net Margin | Gross − Freight − Insurance − Unexpected costs | Per operation |
+| Hedging P&L | Hedging gain/loss allocated to containers | Per container |
+| Budget Variance | Actual margin vs. planned budget | Per operation |
+
+<Callout kind="info">
+Margins update automatically as containers are loaded, invoiced, and paid — giving you a live view of profitability without manual reconciliation.
+</Callout>
+
+## Collaboration and Notifications
+
+Stay aligned with your team through tasks, activity logs, and event-driven notifications. Every change in Jules is tracked and can trigger alerts to the right people.
+
+<Columns cols={3}>
+  <Card title="Tasks" icon="check-square">
+    Create and assign action items linked to operations, with due dates and status tracking.
   </Card>
-  <Card title="Advanced Workflows" icon="settings" href="/configuration">
-    Customize exports and integrations.
+  <Card title="Activity Feed" icon="message-circle">
+    View a chronological log of all changes on any entity — who did what and when.
+  </Card>
+  <Card title="Notifications" icon="bell">
+    Receive email and in-app alerts for approvals, status changes, and assigned tasks.
+  </Card>
+</Columns>
+
+<Expandable title="External Portal" default-open="false">
+Share offers, documents, and trade details with counterparties through the external portal — without giving them access to your internal Jules environment. Portal users see only what you choose to share.
+</Expandable>
+
+## Document Generation
+
+Generate professional PDFs for contracts, invoices, packing lists, and commercial documents directly from your trade data. Templates are configurable per organization.
+
+<Steps>
+  <Step title="Select Template" icon="file">
+    Choose from pre-configured document templates for your organization.
+  </Step>
+  <Step title="Auto-Fill Data" icon="zap">
+    Operation, container, and pricing data populate the document automatically.
+  </Step>
+  <Step title="Review & Send" icon="send">
+    Preview the PDF, then share via email or the external portal.
+  </Step>
+</Steps>
+
+<Columns cols={2}>
+  <Card title="Get Started" icon="rocket" href="/introduction-en">
+    Read the introduction to understand how Jules is organized.
+  </Card>
+  <Card title="Operations Guide" icon="play" href="/operations-lifecycle-en">
+    Dive into the central entity that connects everything.
   </Card>
 </Columns>

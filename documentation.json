@@ -26,6 +26,10 @@
               {
                 "title": "Trade lifecycle walkthrough - End to end",
                 "path": "trade-lifecycle-walktrough---end-to-end"
+              },
+              {
+                "title": "Features",
+                "path": "features"
               }
             ]
           },
@@ -46,16 +50,8 @@
                 "path": "pricing-index-offers"
               },
               {
-                "title": "Tasks, Notes & Notifications",
-                "path": "tasks-notes"
-              },
-              {
                 "title": "Qualities, Commodities & Materials",
                 "path": "qualities-commodities-materials"
-              },
-              {
-                "title": "Documents, PDFs & Integrations",
-                "path": "documents-pdfs-integrations"
               },
               {
                 "title": "Users, Roles & Permissions",
@@ -68,26 +64,6 @@
               {
                 "title": "Contract pricing",
                 "path": "contract-pricing"
-              },
-              {
-                "title": "Operations lifecycle",
-                "path": "operations-lifecycle"
-              },
-              {
-                "title": "Invoicing & Billing",
-                "path": "invoicing-billing"
-              },
-              {
-                "title": "Hedging",
-                "path": "hedging"
-              },
-              {
-                "title": "Margin",
-                "path": "margin"
-              },
-              {
-                "title": "Features",
-                "path": "features"
               }
             ]
           },
@@ -100,12 +76,24 @@
                 "path": "companies-sites-contacts"
               },
               {
+                "title": "Operations lifecycle",
+                "path": "operations-lifecycle"
+              },
+              {
                 "title": "Allocations",
                 "path": "allocations-en"
               },
               {
+                "title": "Budget",
+                "path": "budget"
+              },
+              {
                 "title": "Bookings",
                 "path": "bookings-en"
+              },
+              {
+                "title": "Logistics & Freight",
+                "path": "logistics-freight"
               },
               {
                 "title": "Containers",
@@ -116,16 +104,28 @@
                 "path": "shipments-en"
               },
               {
+                "title": "Margin",
+                "path": "margin"
+              },
+              {
+                "title": "Hedging",
+                "path": "hedging"
+              },
+              {
                 "title": "Charterparty & Cargo Bulk",
                 "path": "charterparty-cargo-bulk-en"
               },
               {
-                "title": "Logistics & Freight",
-                "path": "logistics-freight"
+                "title": "Documents, PDFs & Integrations",
+                "path": "documents-pdfs-integrations"
               },
               {
-                "title": "Budget",
-                "path": "budget"
+                "title": "Tasks, Notes & Notifications",
+                "path": "tasks-notes"
+              },
+              {
+                "title": "Invoicing & Billing",
+                "path": "invoicing-billing"
               }
             ]
           },
