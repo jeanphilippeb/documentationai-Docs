@@ -207,26 +207,3 @@ flowchart LR
 | [Users, Roles & Permissions](./users-permissions-en.mdx)             | User identities, role-based access, organizational structure, ABAC authorization, and portal users    |
 | [Configuration & Settings](./configuration-settings-en.mdx)          | Per-organization setup: currencies, business rules, trade terms, ERP integration, dashboards          |
 
----
-
-## Technical Stack
-
-Jules is built on a modern TypeScript stack, shared across the backend (`harold-api`) and frontend (`harold-web`):
-
-| Layer               | Technology                                                                |
-| ------------------- | ------------------------------------------------------------------------- |
-| **Backend**         | Node.js 18 + TypeScript + Express + Apollo Server 4 (GraphQL)             |
-| **Database**        | PostgreSQL — 1 schema per organization, Knex.js query builder             |
-| **Background jobs** | RabbitMQ worker queue + Redis cache + DataLoader batching                 |
-| **Frontend**        | React SPA                                                                 |
-| **Authentication**  | Magic.link (passwordless)                                                 |
-| **Authorization**   | Permit.io ABAC — fine-grained permission checks on every GraphQL mutation |
-| **Feature flags**   | LaunchDarkly                                                              |
-| **Environments**    | Demo · Staging · Production (Firebase + Docker)                           |
-
-The GraphQL API has over 200 modules, each following a strict 6-file pattern: `schema.graphql`, `resolver.ts`, `model.ts`, `connector.ts`, `connector-ro.ts`, and `dataloader.ts`.
-
----
-
-> **Where to start?** If you are new to Jules, read [Operations & Lifecycle](./operations-lifecycle-en.mdx) first — it explains the central entity around which everything else is organized. Then follow with [Contracts & Pricing](./contracts-pricing-en.mdx) and [Invoicing & Billing](./invoicing-billing-en.mdx) to understand the full commercial flow.
-
