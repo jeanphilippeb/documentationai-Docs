@@ -35,6 +35,70 @@
             "icon": "layers",
             "pages": [
               {
+                "title": "Trade lifecycle walktrough - End to end",
+                "path": "trade-lifecycle-walktrough---end-to-end"
+              },
+              {
+                "title": "Local vs International markets",
+                "path": "local-vs-international-markets"
+              },
+              {
+                "title": "Allocations & Buy-Sell matching",
+                "path": "allocations-buy-sell-matching"
+              },
+              {
+                "title": "Pricing, Index & Offers",
+                "path": "pricing-index-offers"
+              },
+              {
+                "title": "Tasks, Notes & Notifications",
+                "path": "tasks-notes"
+              },
+              {
+                "title": "Qualities, Commodities & Materials",
+                "path": "qualities-commodities-materials"
+              },
+              {
+                "title": "Documents, PDFs & Integrations",
+                "path": "documents-pdfs-integrations"
+              },
+              {
+                "title": "Users, Roles & Permissions",
+                "path": "users-roles-permissions"
+              },
+              {
+                "title": "Configuration & Settings",
+                "path": "configuration-settings"
+              },
+              {
+                "title": "Companies, Sites & Contacts",
+                "path": "companies-sites-contacts"
+              },
+              {
+                "title": "Budget",
+                "path": "budget"
+              },
+              {
+                "title": "Contract pricing",
+                "path": "contract-pricing"
+              },
+              {
+                "title": "Operations lifecycle",
+                "path": "operations-lifecycle"
+              },
+              {
+                "title": "Invoicing & Billing",
+                "path": "invoicing-billing"
+              },
+              {
+                "title": "Logistics.& Freight",
+                "path": "logistics-freight"
+              },
+              {
+                "title": "Hedging",
+                "path": "hedging"
+              },
+              {
                 "title": "Margin",
                 "path": "margin"
               },

@@ -1,83 +1,232 @@
 ---
-title: Introduction to MineHub
-description: Discover MineHub, a comprehensive documentation management platform designed to help teams organize, collaborate on, and maintain project documentation efficiently.
+title: Introduction to Jules
+description: >-
+  What Jules is, who uses it, and how the platform is organized — the starting
+  point before diving into any specific topic.
+---
+> Product documentation — A concise overview of Jules: what it does, who it serves, and how every functional area fits together.
+
 ---
 
-<Callout kind="info" title="Starter Kit Template">
-  This documentation was generated as a starter kit template based on your brand. Please review and customize the content to accurately reflect your product's features, APIs, and capabilities.
-</Callout>
+## Table of Contents
 
-## Overview
+1. [What is Jules?](#what-is-jules)
 
-MineHub empowers teams to centralize all project documentation in one intuitive platform. You create, organize, and collaborate on docs with version control, search, and permissions tailored for modern workflows. Streamline knowledge sharing whether you're building software, managing projects, or documenting processes.
+2. [Who Uses Jules?](#who-uses-jules)
 
-<Callout kind="tip">
-  Start small: Create your first documentation space in under 5 minutes.
-</Callout>
+3. [Core Value Proposition](#core-value-proposition)
 
-## Key Features
+4. [Platform Map](#platform-map)
 
-MineHub offers powerful tools to keep your documentation organized and accessible.
+5. [Key Concepts](#key-concepts)
 
-<Columns cols={3}>
-  <Card title="Spaces & Folders" icon="folder-tree" href="#organization">
-    Group related docs into customizable spaces and nested folders for effortless navigation.
-  </Card>
-  <Card title="Real-time Collaboration" icon="users" href="#collaboration">
-    Edit docs simultaneously with teammates, with inline comments and @mentions.
-  </Card>
-  <Card title="Version History" icon="git-branch" href="#versions">
-    Track changes, revert to previous versions, and compare diffs automatically.
-  </Card>
-</Columns>
+6. [Documentation Map](#documentation-map)
 
-## Who Should Use MineHub
+7. [Technical Stack](#technical-stack)
 
-You benefit from MineHub if you're a developer needing API references, a product manager organizing roadmaps, or an engineering team maintaining internal wikis. Small startups scale documentation alongside growth, while enterprises enforce compliance through granular permissions. Replace scattered Google Docs, Notion pages, or wikis with a unified hub.
+---
 
-## Quick Start
+## What is Jules?
 
-Get up and running with MineHub in a few steps.
+**Jules** is a vertical SaaS ERP built for companies that trade recyclable commodities — ferrous and non-ferrous scrap metals, waste paper, plastics, and electronic waste.
 
-<Steps>
-  <Step title="Create Account" icon="user-plus">
-    Sign up at `https://app.minehub.com` with your email. Verify your account to unlock full features.
-  </Step>
-  <Step title="Set Up Space" icon="folder-plus">
-    Create a new documentation space for your project.
+It is developed by **MineHub Technologies** (TSX.V: MHUB) and replaces the patchwork of spreadsheets, email threads, and fragmented tools that trading teams typically rely on. Jules connects every step of the trade lifecycle — from the initial commercial agreement to the final cash settlement — inside a single, structured platform.
 
-    ```javascript
-    // Example API call to create a space
-    const response = await fetch('https://api.example.com/v1/spaces', {
-      method: 'POST',
-      headers: { 'Authorization': 'Bearer YOUR_API_KEY' },
-      body: JSON.stringify({ name: 'My Project Docs' })
-    });
-    ```
-  </Step>
-  <Step title="Add Your First Doc" icon="file-plus">
-    Upload Markdown files or use the editor to draft content. Organize with folders.
-  </Step>
-  <Step title="Invite Team" icon="mail">
-    Share the space link and set permissions for collaborators.
-  </Step>
-</Steps>
+The platform is multi-tenant: every customer organization runs inside its own isolated environment, with its own data, configuration, and users.
 
-## Next Steps
+---
 
-Explore these guides to dive deeper.
+## Who Uses Jules?
 
-<Columns cols={2}>
-  <Card title="Quickstart Guide" icon="zap" href="/quickstart">
-    Complete hands-on setup with code examples.
-  </Card>
-  <Card title="Authentication" icon="shield" href="/authentication">
-    Secure your API access and manage tokens.
-  </Card>
-  <Card title="Configuration" icon="settings" href="/configuration">
-    Customize spaces and permissions.
-  </Card>
-  <Card title="Changelog" icon="git-commit" href="/changelog">
-    Stay updated with latest releases.
-  </Card>
-</Columns>
+Jules is designed for **trading companies, brokers, and recyclers** who buy and sell recyclable materials in domestic or international markets. A typical organization using Jules includes:
+
+| Role                      | How they use Jules                                                |
+| ------------------------- | ----------------------------------------------------------------- |
+| **Trader / Commercial**   | Create operations, manage contracts, track margins, send offers   |
+| **Logistics Coordinator** | Plan freight, manage bookings, containers, and shipments          |
+| **Accountant / Finance**  | Issue invoices, process payments, track budgets and P\&L          |
+| **Operations Manager**    | Monitor the full trade pipeline, approve operations and documents |
+| **Back-office / Admin**   | Manage reference data, configuration, users, and permissions      |
+| **Counterparty (Portal)** | View shared offers and documents via the external portal          |
+
+---
+
+## Core Value Proposition
+
+Jules handles the **entire journey from contract to cash** — sometimes called "procure-to-pay" on the buy side and "order-to-cash" on the sell side. It eliminates the handoff friction between teams by keeping all trade data in one place:
+
+- A **contract** prefills an **operation**
+
+- An **operation** generates **containers**
+
+- Containers generate **logistics bookings** and **invoicing lines**
+
+- Invoicing lines aggregate into **invoices** and feed the **margin** engine
+
+- Everything is governed by **approvals**, tracked with **tasks**, and documented with **PDFs**
+
+---
+
+## Platform Map
+
+Jules is organized into five functional areas that interact around the central **operation** entity:
+
+```mermaid
+flowchart TD
+    OP[Operation\nThe central entity]
+
+    subgraph COM[Commercial]
+        CTR[Contracts]
+        OFF[Offers & Pricing]
+        ALLOC[Allocations]
+    end
+
+    subgraph LOG[Logistics]
+        FR[Freight & Rates]
+        BOOK[Bookings]
+        CTN[Containers]
+        SHIP[Shipments]
+        PC[Pre-Carriage]
+    end
+
+    subgraph FIN[Financial]
+        INV[Invoicing & Billing]
+        MAR[Margins]
+        BUD[Budgets & Goals]
+        HEDGE[Hedging]
+    end
+
+    subgraph REF[Reference Data]
+        CO[Companies & Sites]
+        QUAL[Qualities & Commodities]
+        CFG[Configuration]
+    end
+
+    subgraph COL[Collaboration]
+        TASK[Tasks & Activities]
+        NOTIF[Notifications]
+        PDF[Documents & PDFs]
+    end
+
+    CTR -->|prefills| OP
+    OFF -->|informs price| OP
+    OP --> CTN
+    OP --> INV
+    OP --> MAR
+    OP --> ALLOC
+    CTN --> BOOK
+    CTN --> SHIP
+    CTN --> PC
+    INV --> FIN
+    HEDGE --> MAR
+    BUD -->|plan before| OP
+    REF -->|master data for| OP
+    OP --> TASK
+    OP --> PDF
+
+    style OP fill:#4E3BEB,color:white
+    style COM fill:#f0f0ff,stroke:#4E3BEB
+    style LOG fill:#f0fff8,stroke:#03CE85
+    style FIN fill:#fff8f0,stroke:#FF7512
+    style REF fill:#f8f8f8,stroke:#999
+    style COL fill:#f5f0ff,stroke:#6270B8
+```
+
+---
+
+## Key Concepts
+
+### The Operation
+
+The **operation** is the central entity in Jules. It represents a single commercial transaction — a purchase or a sale — of a specific set of materials with a specific counterparty. Everything else in the platform is either a prerequisite to creating an operation (contracts, qualities, companies) or a consequence of it (containers, invoices, margins, logistics).
+
+See: [Operations & Lifecycle](./operations-lifecycle-en.mdx)
+
+### Multi-Tenancy
+
+Jules is multi-tenant. Each customer organization is a **tenant** identified by an `organizationId`. Every data record — operations, invoices, companies, sites — is scoped to that tenant's own isolated PostgreSQL schema. No data is ever shared between organizations.
+
+### Market Modes
+
+Operations in Jules operate in one of two market modes:
+
+| Mode                       | Description                                                                                                    |
+| -------------------------- | -------------------------------------------------------------------------------------------------------------- |
+| **Export (International)** | Containerized shipments via maritime freight; involves freight booking, Bill of Lading, port-to-port logistics |
+| **Local (Domestic)**       | Bulk or direct shipments without containerization; simpler logistics, often using stockpiles                   |
+
+The market mode of an operation determines which logistics flows, document types, and margin calculations are relevant.
+
+### The Trade Lifecycle
+
+A trade in Jules typically follows this path:
+
+```mermaid
+flowchart LR
+    CTR[Contract\nor direct] --> OP[Operation\nCreated]
+    OP --> APPR[Approved]
+    APPR --> CTN[Containers\nLoaded]
+    CTN --> BOOK[Booked\n& Shipped]
+    BOOK --> INV[Invoiced]
+    INV --> PAID[Paid\n& Closed]
+
+    style CTR fill:#6270B8,color:white
+    style OP fill:#4E3BEB,color:white
+    style APPR fill:#4E3BEB,color:white
+    style CTN fill:#6270B8,color:white
+    style BOOK fill:#6270B8,color:white
+    style INV fill:#FF7512,color:white
+    style PAID fill:#03CE85,color:white
+```
+
+---
+
+## Documentation Map
+
+### Tier 1 — Core Trading
+
+| Article                                                       | What it covers                                                                                      |
+| ------------------------------------------------------------- | --------------------------------------------------------------------------------------------------- |
+| [Operations & Lifecycle](./operations-lifecycle-en.mdx)       | The central trade entity — types, lifecycle states, pricing, approval workflow, and allocations     |
+| [Contracts & Pricing](./contracts-pricing-en.mdx)             | Commercial agreements, quality streams, price formulas, and how contracts prefill operations        |
+| [Invoicing & Billing](./invoicing-billing-en.mdx)             | Container invoicing lines, invoice types, payment reconciliation, credit/debit notes, ERP sync      |
+| [Logistics & Freight](./logistics-freight-en.mdx)             | Pre-carriage, freight rates, bookings, containers, shipments, and the full logistics chain          |
+| [Hedging & Risk Management](./hedging-risk-management-en.mdx) | Hedging contracts, container-level allocation, position tracking, and margin impact                 |
+| [Budgets & Goals](./budgets-goals-en.mdx)                     | Commercial planning: purchase/sale targets (goals) and deal-level budgets with cashflow projections |
+| [Margin Calculations](./margin-calculations-en.mdx)           | How Jules calculates profitability — container margin, dashboard margin, and bulk margin            |
+
+### Tier 2 — Supporting Modules
+
+| Article                                                              | What it covers                                                                                        |
+| -------------------------------------------------------------------- | ----------------------------------------------------------------------------------------------------- |
+| [Companies, Sites & Contacts](./companies-sites-contacts-en.mdx)     | The master data foundation: counterparties, physical locations, people, and geography                 |
+| [Qualities, Commodities & Materials](./qualities-commodities-en.mdx) | The three-level material classification (family → group → quality) and product catalog                |
+| [Pricing Engine, Indices & Offers](./pricing-indices-offers-en.mdx)  | Market price indices, formula-based pricing, commercial offers, price suggestions, and portal sharing |
+| [Tasks, Activities & Notifications](./tasks-activities-en.mdx)       | Action items, commercial activity logs, event-driven notifications, watchers, and audit trails        |
+| [Documents, PDFs & Integrations](./documents-pdf-en.mdx)             | PDF generation, document templates, AI-assisted verification, Letter of Credit, email, and webhooks   |
+| [Users, Roles & Permissions](./users-permissions-en.mdx)             | User identities, role-based access, organizational structure, ABAC authorization, and portal users    |
+| [Configuration & Settings](./configuration-settings-en.mdx)          | Per-organization setup: currencies, business rules, trade terms, ERP integration, dashboards          |
+
+---
+
+## Technical Stack
+
+Jules is built on a modern TypeScript stack, shared across the backend (`harold-api`) and frontend (`harold-web`):
+
+| Layer               | Technology                                                                |
+| ------------------- | ------------------------------------------------------------------------- |
+| **Backend**         | Node.js 18 + TypeScript + Express + Apollo Server 4 (GraphQL)             |
+| **Database**        | PostgreSQL — 1 schema per organization, Knex.js query builder             |
+| **Background jobs** | RabbitMQ worker queue + Redis cache + DataLoader batching                 |
+| **Frontend**        | React SPA                                                                 |
+| **Authentication**  | Magic.link (passwordless)                                                 |
+| **Authorization**   | Permit.io ABAC — fine-grained permission checks on every GraphQL mutation |
+| **Feature flags**   | LaunchDarkly                                                              |
+| **Environments**    | Demo · Staging · Production (Firebase + Docker)                           |
+
+The GraphQL API has over 200 modules, each following a strict 6-file pattern: `schema.graphql`, `resolver.ts`, `model.ts`, `connector.ts`, `connector-ro.ts`, and `dataloader.ts`.
+
+---
+
+> **Where to start?** If you are new to Jules, read [Operations & Lifecycle](./operations-lifecycle-en.mdx) first — it explains the central entity around which everything else is organized. Then follow with [Contracts & Pricing](./contracts-pricing-en.mdx) and [Invoicing & Billing](./invoicing-billing-en.mdx) to understand the full commercial flow.
+
