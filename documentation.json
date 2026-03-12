@@ -24,27 +24,22 @@
                 "icon": "home"
               },
               {
-                "title": "Quickstart",
-                "path": "quickstart",
-                "icon": "zap"
+                "title": "Trade lifecycle walkthrough - End to end",
+                "path": "trade-lifecycle-walktrough---end-to-end"
               }
             ]
           },
           {
-            "group": "Core Concepts",
+            "group": "Main concepts",
             "icon": "layers",
             "pages": [
               {
-                "title": "Trade lifecycle walktrough - End to end",
-                "path": "trade-lifecycle-walktrough---end-to-end"
+                "title": "Allocations & Buy-Sell matching",
+                "path": "allocations-buy-sell-matching"
               },
               {
                 "title": "Local vs International markets",
                 "path": "local-vs-international-markets"
-              },
-              {
-                "title": "Allocations & Buy-Sell matching",
-                "path": "allocations-buy-sell-matching"
               },
               {
                 "title": "Pricing, Index & Offers",
@@ -71,14 +66,6 @@
                 "path": "configuration-settings"
               },
               {
-                "title": "Companies, Sites & Contacts",
-                "path": "companies-sites-contacts"
-              },
-              {
-                "title": "Budget",
-                "path": "budget"
-              },
-              {
                 "title": "Contract pricing",
                 "path": "contract-pricing"
               },
@@ -91,10 +78,6 @@
                 "path": "invoicing-billing"
               },
               {
-                "title": "Logistics.& Freight",
-                "path": "logistics-freight"
-              },
-              {
                 "title": "Hedging",
                 "path": "hedging"
               },
@@ -104,19 +87,71 @@
               },
               {
                 "title": "Features",
-                "path": "features",
-                "icon": "star"
+                "path": "features"
               }
             ]
           },
           {
-            "group": "Advanced",
+            "group": "Modules",
             "icon": "compass",
             "pages": [
               {
-                "title": "Integrations",
-                "path": "integrations",
-                "icon": "link"
+                "title": "Companies, Sites & Contacts",
+                "path": "companies-sites-contacts"
+              },
+              {
+                "title": "Allocations",
+                "path": "allocations-en"
+              },
+              {
+                "title": "Bookings",
+                "path": "bookings-en"
+              },
+              {
+                "title": "Containers",
+                "path": "containers-en"
+              },
+              {
+                "title": "Shipments",
+                "path": "shipments-en"
+              },
+              {
+                "title": "Charterparty & Cargo Bulk",
+                "path": "charterparty-cargo-bulk-en"
+              },
+              {
+                "title": "Logistics & Freight",
+                "path": "logistics-freight"
+              },
+              {
+                "title": "Budget",
+                "path": "budget"
+              }
+            ]
+          },
+          {
+            "group": "Workflows",
+            "icon": "git-branch",
+            "pages": [
+              {
+                "title": "Yard Reception (Local)",
+                "path": "workflow-yard-reception-local-en"
+              },
+              {
+                "title": "Index-Based Pricing",
+                "path": "workflow-index-based-pricing-en"
+              },
+              {
+                "title": "Debit & Credit Note",
+                "path": "workflow-debit-credit-note-en"
+              },
+              {
+                "title": "Month-End Margin Close",
+                "path": "workflow-month-end-margin-close-en"
+              },
+              {
+                "title": "Onboarding Supplier",
+                "path": "workflow-onboarding-supplier-en"
               }
             ]
           }
@@ -186,6 +221,11 @@
             "icon": "history"
           }
         ]
+      },
+      {
+        "tab": "Internal Troubleshooting",
+        "pages": [],
+        "icon": "flag"
       }
     ]
   }
