@@ -38,6 +38,10 @@
             "icon": "layers",
             "pages": [
               {
+                "title": "Formula prices",
+                "path": "formula-prices"
+              },
+              {
                 "title": "Allocations & Buy-Sell matching",
                 "path": "allocations-buy-sell-matching"
               },
